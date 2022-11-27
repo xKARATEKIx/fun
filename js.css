@@ -1,0 +1,36 @@
+body {
+   background-color: #fff;
+    color: #fff;
+    text-transform: uppercase; 
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.header {
+    color: red;
+    padding: 10px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header.active {
+    color: #fff;
+}
+
+.main {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.footer {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(9, 240, 143);
+}
+
