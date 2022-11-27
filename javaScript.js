@@ -1,6 +1,8 @@
 
 
-var el = document.getElementById('container');
+let arr = [];
+let el = document.getElementById('container');
+
 
 el.addEventListener('click', function() {
   if(this.style.backgroundColor === 'black') {
