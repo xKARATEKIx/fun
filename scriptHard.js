@@ -1,15 +1,32 @@
 'use strict';
 
-let foo = (stringi, maxLength = 30) => {
-    if (typeof stringi !== 'string' ) {
-        console.log('its not string');
-        return stringi;
-    }  else if(typeof stringi === 'string' || stringi.length < maxLength) {
-        stringi = stringi.slice(0, maxLength);
-        stringi += '...';
-        return console.log(stringi.trim());
+let arr = ['12111113', '4555556', '675558', '4242', '000000002'];
+
+let num = arr.map(str => {
+        return parseInt(str);
+    }); 
+    
+console.log(num);
+
+// let found = num.find(el => el === 2 || el === 4);
+// console.log(found);
+
+
+arr.forEach((item) => {
+    if (item.startsWith(2) || item.startsWith(4)) {
+      console.log(item);
+    }
+});
+
+next:
+for(let i = 2; i < 101; i++) {
+    for(let k = 2; k < i; k++) {
+        if(i % k == 0) {
+              
+           continue next;
+           
+        }
        
-    } 
-   
-};
-foo('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdasdasdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd       ');
+    }
+    console.log(`Делители этого числа: 1 и ${i}`);
+}
