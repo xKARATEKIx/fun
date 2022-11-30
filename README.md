@@ -84,4 +84,4 @@ It is correct to use loop or brute force methods.
 
 4) Output to the console the first 2 digits of the resulting number
 
-Translated with www.DeepL.com/Translator (free version)
+
