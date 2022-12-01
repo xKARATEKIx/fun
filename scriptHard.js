@@ -8,10 +8,6 @@ let num = arr.map(str => {
     
 console.log(num);
 
-// let found = num.find(el => el === 2 || el === 4);
-// console.log(found);
-
-
 arr.forEach((item) => {
     if (item.startsWith(2) || item.startsWith(4)) {
       console.log(item);
