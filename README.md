@@ -47,7 +47,7 @@ You need to execute in a separate js file connected to a separate HTML page
 
 2) Output a column of all prime numbers from 1 to 100 (do it via a loop)
 
-- Article about prime numbers - CLICK
+
 
 - Next to each number write both divisors of the number
 
