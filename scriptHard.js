@@ -1,28 +1,21 @@
 'use strict';
 
-let arr = ['12111113', '4555556', '675558', '4242', '000000002'];
+let week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-let num = arr.map(str => {
-        return parseInt(str);
-    }); 
+for (let i = 0, len = week.length; i < len; i++) {
+    let html = week[i];
+    let day = new Date("December 1, 2022 23:15:30");
+    let currentDay = day.getDay();
+   
+    console.log(day);
+    if(i == currentDay) {
+        html = html.bold(); // Monday
+    } else if (i > 4) {
+        html = html.italics(); // weekends
+    } 
     
-console.log(num);
-
-arr.forEach((item) => {
-    if (item.startsWith(2) || item.startsWith(4)) {
-      console.log(item);
-    }
-});
-
-next:
-for(let i = 2; i < 101; i++) {
-    for(let k = 2; k < i; k++) {
-        if(i % k == 0) {
-              
-           continue next;
-           
-        }
-       
-    }
-    console.log(`Делители этого числа: 1 и ${i}`);
+    const div = document.createElement('div');
+    div.innerHTML = html;
+    document.body.appendChild(div);
 }
+
