@@ -42,9 +42,7 @@ let appData = {
         for(let key in appData.expenses) {
          appData.expensesMonth = appData.expenses[key] + appData.expenses[key];
         }
-        // for(let key in appData.expenses) {
-        //     console.log(`key: ${key}, props: ${appData.expenses[key]}`);
-        //  }
+       
         console.log( appData.expensesMonth);
     },
 
@@ -86,10 +84,6 @@ appData.getBudget();
 appData.getTargetMonth();
 appData.getBudgetDay();
 appData.getStatusIncome();
-
-
-// let expensesAmuont = appData.getExpensesMonth();
-// let accumulatedMonth = appData.getBudget();
 
 console.log(`Expenses for month: ${appData.expensesMonth}`);
 console.log(`Период равен ${appData.period} месяцев. И цель заработать ${appData.mission} долларов`);
