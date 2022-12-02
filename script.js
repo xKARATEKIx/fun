@@ -3,11 +3,11 @@
 let isNumber = (n) => {
    return !isNaN(parseFloat(n));                                                                        
 };
+
 let money = prompt('What is your monthly income?', 7000);
 
 let start = () => {
     
-
     do {
         money 
     } while(isNaN(parseFloat(money)) || money === " ", money === null);
