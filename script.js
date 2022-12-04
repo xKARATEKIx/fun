@@ -6,7 +6,6 @@ let isNumber = (n) => {
 let money = prompt('What is your monthly income?', 7000);
 
 let start = () => {
-    
 
     do {
         money 
@@ -31,49 +30,44 @@ let appData = {
     asking: () => {
         
         let itemIncome;
+       
         do {
             itemIncome = prompt('Do you have extra income');
-          } while(!itemIncome);
-        
-        do {
-            itemIncome = prompt('Do you have extra income');
-        }while(isNumber(itemIncome));
+        }while(isNumber(itemIncome) || !itemIncome);
         
        
        
         let cashIncome;
+       
         do {
             cashIncome = +prompt('How much do you earn');
-        }while(!cashIncome);
-        
-        do {
-            cashIncome = +prompt('How much do you earn');
-        } while(!isNumber(cashIncome));
+        } while(!isNumber(cashIncome) || !cashIncome);
         
         appData.income[itemIncome] = cashIncome;
 
         let addExpenses = prompt('List the possible expenses for the calculated period, separated by commas', 'home, car');
-        appData.addExpenses = addExpenses.toLocaleLowerCase().split(', ');
+        let addExpensesArr = addExpenses.split(', ');
+        for (let i = 0; i < addExpensesArr.length; i++) {
+            addExpensesArr[i] = addExpensesArr[i].charAt(0).toUpperCase() + addExpensesArr[i].slice(1);
+        }
+        let addExpensesString = addExpensesArr.join(",");
+        appData.addExpenses = addExpensesString;
+
+
         appData.deposit = confirm('Whether you have a deposit in the bank', true);
     
         for (let i = 0; i < 2; i++) {
             let expenseName;
-            do {
-                expenseName = prompt('Enter a mandatory expense item');
-            }while(!expenseName);
 
             do {
                 expenseName = prompt('Enter a mandatory expense item');
-            }while(isNumber(expenseName));
+            }while(isNumber(expenseName) || !expenseName);
 
             let expensePrice;
-            do {
-                expensePrice = +prompt('How much does it cost?');
-            }while(!expensePrice);
 
             do {
                 expensePrice = +prompt('How much does it cost?');
-            }while(!isNumber(expensePrice));
+            }while(!isNumber(expensePrice) || !expensePrice);
 
             
 
@@ -85,12 +79,12 @@ let appData = {
         for(let key in appData.expenses) {
          appData.expensesMonth = appData.expenses[key] + appData.expenses[key];
         }
-        console.log( appData.expensesMonth);
+        console.log(appData.expensesMonth);
     },
 
     getBudget: () => {
         appData.budgetMonth = money - appData.expensesMonth;
-        console.log( appData.budgetMonth);
+        console.log(appData.budgetMonth);
     },
 
     getTargetMonth: () => {
@@ -99,12 +93,11 @@ let appData = {
             console.log('The goal will not be achieved');
         }
         appData.period = appData.mission / appData.budgetMonth;
-        console.log(appData.period);
     },
 
     getBudgetDay: () => {
         appData.budgetDay = appData.budgetMonth / 30;
-        console.log( appData.budgetDay);
+        console.log(`Budget Day ${appData.budgetDay}`);
     },
 
     getStatusIncome: () => {
@@ -120,23 +113,15 @@ let appData = {
     },
     getInfoDeposit: () => {
         if(appData.deposit) {
-            //validation percentDeposit
+            //validation percentDeposit  
             do {
                 appData.percentDeposit = prompt('What is the annual deposit');
-            }while(!appData.percentDeposit);
-
-            do {
-                appData.percentDeposit = prompt('What is the annual deposit');
-            }while(!isNumber(appData.percentDeposit));
+            }while(!isNumber(appData.percentDeposit) || !appData.percentDeposit);
 
             //validation moneyDeposit
             do {
                 appData.moneyDeposit = prompt('How much is budgeted');
-            }while(!appData.moneyDeposit);
-
-            do {
-                appData.moneyDeposit = prompt('How much is budgeted');
-            }while(!isNumber(appData.moneyDeposit));
+            }while(!isNumber(appData.moneyDeposit) || !appData.moneyDeposit);
         }
     },
     calcSavedMoney: () => {
@@ -153,6 +138,7 @@ appData.getStatusIncome();
 appData.getInfoDeposit();
 appData.calcSavedMoney();
 
+console.log(appData.addExpenses);
 console.log(`Expenses for month: ${appData.expensesMonth}`);
 console.log(`Период равен ${Math.floor(appData.period)} месяцев. И цель заработать ${appData.mission} долларов`);
 console.log(`The goal will be achieved per ${appData.period} month`);
