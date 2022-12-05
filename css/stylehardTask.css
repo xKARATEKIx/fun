@@ -1,0 +1,17 @@
+.box,
+.box-2 {
+    max-width: 100%;
+    display: flex;
+    align-content: center;
+}
+
+.date {
+    width: 265px;
+}
+.second {
+    width: 77px;
+}
+
+.time-node {
+    width: 265px;
+}
