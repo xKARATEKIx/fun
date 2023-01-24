@@ -1,4 +1,3 @@
-# fun
 
 1) Rewrite the getIncome method similar to getExpenses
 
