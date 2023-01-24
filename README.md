@@ -1,4 +1,4 @@
-# study_JS
+
 
 1) Make a check when you receive the data:
 
