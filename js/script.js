@@ -51,7 +51,6 @@ let appData = {
             alert('Please enter a number!');
         } 
         
-
         appData.getExpenses();
         appData.getIncome();
         appData.getExpensesMonth();
